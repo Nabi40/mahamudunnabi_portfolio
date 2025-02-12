@@ -1293,3 +1293,43 @@ input[type="text"] {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.custom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.custom-col {
+  flex: 1;
+  max-width: 300px;
+  margin: 15px;
+}
+
+.custom-feature {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-icon {
+  font-size: 40px;
+  color: rgba(61, 92, 134, 0.945);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.custom-feature-text h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.custom-feature-text p {
+  font-size: 14px;
+  color: #666;
+}
+
