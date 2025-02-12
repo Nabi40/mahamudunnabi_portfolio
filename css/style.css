@@ -358,7 +358,9 @@ h1, h2, h3, h4, h5, h6, figure {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  *display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .fh5co-social-icons li a {
   display: -moz-inline-stack;
