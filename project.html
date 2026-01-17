@@ -14,10 +14,47 @@
     <div class="text-center mb-12">
       <h2 class="text-4xl font-bold font-kaushan text-gray-900">My Projects</h2>
       <p class="text-gray-500 font-mono pt-4">A showcase of my personal projects</p>
+      
+      <!-- Toggle Buttons -->
+      <div class="flex justify-center gap-4 mt-6">
+        <button id="exploredBtn" onclick="toggleProjects('explored')" class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+          Explored Projects
+        </button>
+        <button id="workingBtn" onclick="toggleProjects('working')" class="px-6 py-2 bg-gray-400 text-white font-semibold rounded-lg hover:bg-gray-500 transition">
+          Currently Exploring
+        </button>
+      </div>
     </div>
 
-    <!-- Masonry Grid -->
-    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+    <!-- Explored Projects Grid -->
+    <div id="exploredProjects" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+
+
+
+
+            <!-- Card -1 -->
+      <div class="break-inside-avoid bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
+        <img src="####" alt="video_to_panorama" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold">YoloDetectGemini: </h3>
+        <p class="text-gray-600"><strong>Key Features:</strong>An intelligent image analysis platform combining real-time object detection using YOLO with conversational AI capabilities powered by Google Gemini. </p>
+        <p class="text-gray-600"><strong>Tech:</strong> Yolo, Gemini, django, nextjs</p>
+        <a href="https://github.com/Nabi40/YoloDetectGemini" target="_blank" class="inline-block mt-3 text-blue-600 font-semibold hover:underline">
+          View Code →
+        </a>
+      </div>
+
+            <!-- Card 0 -->
+      <div class="break-inside-avoid bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
+        <img src="###" alt="video_to_panorama" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold">RealTimeStoT</h3>
+        <p class="text-gray-600"><strong>Key Features:</strong> This project provides a real-time speech-to-text system using Django Channels,
+           Faster-Whisper, and a Next.js frontend. It captures audio from a microphone, 
+           streams it via WebSockets to the backend, and returns transcriptions in near real-time.</p>
+        <p class="text-gray-600"><strong>Tech:</strong> Django Channels, Faster-Whisper, and a Next.js</p>
+        <a href="https://github.com/Nabi40/RealTimeStoT" target="_blank" class="inline-block mt-3 text-blue-600 font-semibold hover:underline">
+          View Code →
+        </a>
+      </div>
 
       <!-- Card 1 -->
       <div class="break-inside-avoid bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
@@ -116,7 +153,45 @@
       </div>
 
     </div>
+
+    <!-- Currently Working Projects Grid -->
+    <div id="workingProjects" class="hidden columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      <!-- currently working Card 1 -->
+      <div class="break-inside-avoid bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
+        <img src="###" alt="currently working" class="rounded-xl mb-4">
+        <h3 class="text-xl font-bold">currently working </h3>
+        <p class="text-gray-600"><strong>Key Features:</strong> This project provides a real-time speech-to-text system using Django Channels,
+           Faster-Whisper, and a Next.js frontend. It captures audio from a microphone, 
+           streams it via WebSockets to the backend, and returns transcriptions in near real-time.</p>
+        <p class="text-gray-600"><strong>Tech:</strong> Django Channels, Faster-Whisper, and a Next.js</p>
+        <a href="currently working" target="_blank" class="inline-block mt-3 text-blue-600 font-semibold hover:underline">
+          View Code →
+        </a>
+      </div>
+    </div>
   </section>
 
-</body>
-</html>
+  <script>
+    function toggleProjects(section) {
+      const exploredProjects = document.getElementById('exploredProjects');
+      const workingProjects = document.getElementById('workingProjects');
+      const exploredBtn = document.getElementById('exploredBtn');
+      const workingBtn = document.getElementById('workingBtn');
+
+      if (section === 'explored') {
+        exploredProjects.classList.remove('hidden');
+        workingProjects.classList.add('hidden');
+        exploredBtn.classList.remove('bg-gray-400', 'hover:bg-gray-500');
+        exploredBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+        workingBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        workingBtn.classList.add('bg-gray-400', 'hover:bg-gray-500');
+      } else if (section === 'working') {
+        exploredProjects.classList.add('hidden');
+        workingProjects.classList.remove('hidden');
+        exploredBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+        exploredBtn.classList.add('bg-gray-400', 'hover:bg-gray-500');
+        workingBtn.classList.remove('bg-gray-400', 'hover:bg-gray-500');
+        workingBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+      }
+    }
+  </script>
